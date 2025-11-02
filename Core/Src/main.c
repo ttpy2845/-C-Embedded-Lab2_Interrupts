@@ -453,10 +453,10 @@ void Effect_1(void)
 
 void Effect_2(void)
 {
-        HAL_GPIO_WritePin(GPIOD, LED_GREEN | LED_ORANGE | LED_RED | LED_BLUE, GPIO_PIN_SET);
-        HAL_Delay(300);
-        HAL_GPIO_WritePin(GPIOD, LED_GREEN | LED_ORANGE | LED_RED | LED_BLUE, GPIO_PIN_RESET);
-        HAL_Delay(300);
+    HAL_GPIO_WritePin(GPIOD, LED_GREEN | LED_ORANGE | LED_RED | LED_BLUE, GPIO_PIN_SET);
+    HAL_Delay(300);
+    HAL_GPIO_WritePin(GPIOD, LED_GREEN | LED_ORANGE | LED_RED | LED_BLUE, GPIO_PIN_RESET);
+    HAL_Delay(300);
 }
 
 void Effect_3(void)
@@ -480,16 +480,15 @@ void Effect_3(void)
 
 void Effect_4(void)
 {
-    for(int i = 0; i < 4; i++)
-    {
-        HAL_GPIO_WritePin(GPIOD, LED_GREEN | LED_RED, GPIO_PIN_SET);
-        HAL_GPIO_WritePin(GPIOD, LED_ORANGE | LED_BLUE, GPIO_PIN_RESET);
+
+    HAL_GPIO_WritePin(GPIOD, LED_GREEN | LED_RED, GPIO_PIN_SET);
+    HAL_GPIO_WritePin(GPIOD, LED_ORANGE | LED_BLUE, GPIO_PIN_RESET);
         HAL_Delay(300);
 
-        HAL_GPIO_WritePin(GPIOD, LED_GREEN | LED_RED, GPIO_PIN_RESET);
-        HAL_GPIO_WritePin(GPIOD, LED_ORANGE | LED_BLUE, GPIO_PIN_SET);
-        HAL_Delay(300);
-    }
+    HAL_GPIO_WritePin(GPIOD, LED_GREEN | LED_RED, GPIO_PIN_RESET);
+    HAL_GPIO_WritePin(GPIOD, LED_ORANGE | LED_BLUE, GPIO_PIN_SET);
+    HAL_Delay(300);
+
 }
 
 void Effect_5(void)
