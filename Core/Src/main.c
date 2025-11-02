@@ -142,12 +142,6 @@ int main(void)
 			break;
 		}
 
-		case 4:
-		{
-			Effect_5();
-			break;
-		}
-
 		default:
 			break;
 
@@ -425,7 +419,7 @@ void HAL_GPIO_EXTI_Callback(uint16_t GPIO_Pin)
     {
         counter++;
 
-        if(counter > 4){
+        if(counter > 3){
         	counter = 0;
         }
     }
@@ -491,21 +485,7 @@ void Effect_4(void)
 
 }
 
-void Effect_5(void)
-{
-    uint16_t leds[] = {LED_GREEN, LED_ORANGE, LED_RED, LED_BLUE};
-    for(int i = 0; i < 4; i++)
-    {
-        HAL_GPIO_WritePin(GPIOD, leds[i], GPIO_PIN_SET);
-        HAL_Delay(100);
-        HAL_GPIO_WritePin(GPIOD, leds[i], GPIO_PIN_RESET);
-        HAL_Delay(100);
-        HAL_GPIO_WritePin(GPIOD, leds[(i+1)%4], GPIO_PIN_SET);
-        HAL_Delay(100);
-        HAL_GPIO_WritePin(GPIOD, leds[(i+1)%4], GPIO_PIN_RESET);
 
-    }
-}
 /* USER CODE END 4 */
 
 /**
